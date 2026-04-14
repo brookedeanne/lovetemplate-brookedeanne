@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Love Template | Brooke Deanne</title>
+  <link rel="icon" type="image/png" href="https://assets.cdn.filesafe.space/pjQz9qsQpbXJjKKTUQG0/media/6939e3fa751b342bf94874dc.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=IM+Fell+English+SC&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy-deep:   #0b162a;
+      --navy-mid:    #143659;
+      --steel:       #427aa1;
+      --sky:         #79a7c3;
+      --ice:         #eef4f7;
+      --gold:        #d5b48c;
+      --cream:       #faf7f2;
+      --text-dark:   #0b162a;
+      --text-mid:    #143659;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--navy-deep);
+      color: var(--ice);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ─── BACKGROUND ──────────────────────────────── */
+    .bg-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 80% 20%, rgba(66,122,161,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 10% 80%, rgba(213,180,140,0.10) 0%, transparent 55%),
+        linear-gradient(160deg, #0b162a 0%, #101f35 55%, #0d1a2e 100%);
+    }
+
+    .bg-layer::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    /* ─── LAYOUT ──────────────────────────────────── */
+    .stage {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(121,167,195,0.18);
+      border-radius: 4px;
+      max-width: 680px;
+      width: 100%;
+      padding: 56px 52px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 32px 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);
+      animation: fadeUp 0.7s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── LOGO ────────────────────────────────────── */
+    .logo-wrap {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .logo-wrap img {
+      height: 52px;
+      width: auto;
+      filter: brightness(1.1);
+    }
+
+    /* ─── HEADINGS ────────────────────────────────── */
+    h1, h2, .serif {
+      font-family: 'IM Fell English SC', serif;
+      letter-spacing: 0.03em;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--ice);
+      margin-bottom: 12px;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    h2 {
+      font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+      font-weight: 400;
+      color: var(--ice);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .subhead {
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 0.975rem;
+      line-height: 1.85;
+      color: rgba(238,244,247,0.82);
+      margin-bottom: 16px;
+    }
+
+    p:last-of-type { margin-bottom: 0; }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 28px auto;
+    }
+
+    /* ─── HERO IMAGE ──────────────────────────────── */
+    .hero-img {
+      width: 100%;
+      border-radius: 3px;
+      margin: 28px 0;
+      display: block;
+      border: 1px solid rgba(121,167,195,0.15);
+    }
+
+    /* ─── FORM ────────────────────────────────────── */
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 28px 0;
+    }
+
+    label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sky);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(121,167,195,0.25);
+      border-radius: 2px;
+      padding: 14px 16px;
+      color: var(--ice);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      transition: border-color 0.2s, background 0.2s;
+      outline: none;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.07);
+    }
+
+    input::placeholder { color: rgba(238,244,247,0.3); }
+
+    /* ─── BUTTONS ─────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      width: 100%;
+      padding: 16px 32px;
+      background: linear-gradient(135deg, var(--gold) 0%, #c4a070 100%);
+      color: var(--navy-deep);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 8px;
+    }
+
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid rgba(121,167,195,0.35);
+      color: var(--sky);
+      font-size: 0.75rem;
+      padding: 11px 24px;
+      width: auto;
+      margin-top: 0;
+    }
+
+    .btn-ghost:hover { border-color: var(--sky); background: rgba(121,167,195,0.07); }
+
+    /* ─── QUESTION SCREEN ─────────────────────────── */
+    .q-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+
+    .q-count {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(238,244,247,0.4);
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 2px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 99px;
+      margin-bottom: 36px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--steel), var(--gold));
+      border-radius: 99px;
+      transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .option-btn {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(121,167,195,0.18);
+      border-radius: 2px;
+      padding: 15px 20px;
+      text-align: left;
+      color: rgba(238,244,247,0.85);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      cursor: pointer;
+      transition: all 0.18s;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .option-btn:hover {
+      border-color: rgba(213,180,140,0.5);
+      background: rgba(213,180,140,0.06);
+      color: var(--ice);
+    }
+
+    .option-btn.selected {
+      border-color: var(--gold);
+      background: rgba(213,180,140,0.1);
+      color: var(--ice);
+    }
+
+    .option-letter {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      min-width: 18px;
+      opacity: 0.7;
+    }
+
+    .option-btn.selected .option-letter { opacity: 1; }
+
+    .q-nav {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 24px;
+    }
+
+    /* ─── RESULT SCREEN ───────────────────────────── */
+    .result-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--navy-deep);
+      background: var(--gold);
+      padding: 5px 14px;
+      border-radius: 1px;
+      margin-bottom: 20px;
+    }
+
+    .result-title {
+      font-family: 'IM Fell English SC', serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 400;
+      color: var(--ice);
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    .result-body p {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: rgba(238,244,247,0.85);
+      margin-bottom: 14px;
+    }
+
+    .result-body p strong {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .next-step-box {
+      border: 1px solid rgba(213,180,140,0.3);
+      background: rgba(213,180,140,0.05);
+      border-radius: 2px;
+      padding: 28px 32px;
+      margin-top: 32px;
+      text-align: center;
+    }
+
+    .next-step-box .serif {
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .next-step-box p {
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .email-note {
+      font-size: 0.78rem;
+      color: rgba(238,244,247,0.4);
+      text-align: center;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    /* ─── TRANSITIONS ─────────────────────────────── */
+    .screen { display: none; }
+    .screen.active {
+      display: block;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────────── */
+    @media (max-width: 600px) {
+      .card { padding: 36px 24px; }
+    }
+
+    /* ─── ERROR ───────────────────────────────────── */
+    .error-msg {
+      color: #e07070;
+      font-size: 0.78rem;
+      margin-top: 6px;
+      display: none;
+    }
+    .error-msg.visible { display: block; }
+  </style>
+</head>
+<body>
+  <div class="bg-layer"></div>
+
+  <div class="stage">
+    <div class="card">
+
+      <!-- LOGO -->
+      <div class="logo-wrap">
+        <img src="https://assets.cdn.filesafe.space/pjQz9qsQpbXJjKKTUQG0/media/693745c350387f4a7e64cca1.png" alt="Brooke Deanne" />
+      </div>
+
+      <!-- ══ SCREEN 1: LANDING / OPT-IN ══ -->
+      <div class="screen active" id="screen-optin">
+        <p class="subhead">A Nervous System Assessment</p>
+        <h1>Discover Your <em>Love Template</em></h1>
+        <div class="divider"></div>
+
+        <img
+          class="hero-img"
+          src="https://assets.cdn.filesafe.space/pjQz9qsQpbXJjKKTUQG0/media/69de8d3c01e07d5dde3f0d01.png"
+          alt="Your Love Template"
+        />
+
+        <p>
+          There is a question your nervous system has been answering long before you ever stepped into a relationship.
+        </p>
+        <p>
+          <em>What do I have to do to be loved?</em>
+        </p>
+        <p>
+          That answer was not something you consciously chose. It was something you learned. Shaped in childhood through how love was given, how it was withheld, and what you had to become in order to receive it.
+        </p>
+        <p>
+          This is your love template. And until you can see it clearly, it will keep choosing for you.
+        </p>
+        <p>
+          Enter your name and email below to begin. Your personalized Love Template Breakdown will be sent directly to your inbox.
+        </p>
+
+        <div class="field-group">
+          <div>
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" placeholder="Your first name" autocomplete="given-name" />
+            <div class="error-msg" id="err-name">Please enter your first name.</div>
+          </div>
+          <div>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="your@email.com" autocomplete="email" />
+            <div class="error-msg" id="err-email">Please enter a valid email address.</div>
+          </div>
+        </div>
+
+        <button class="btn" onclick="startAssessment()">Begin the Assessment</button>
+        <p class="email-note">Your information is private. You can unsubscribe at any time.</p>
+      </div>
+
+      <!-- ══ SCREEN 2: QUESTIONS ══ -->
+      <div class="screen" id="screen-questions">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+        </div>
+
+        <div class="q-meta">
+          <span class="q-count" id="q-count">Question 1 of 8</span>
+        </div>
+
+        <h2 id="q-text"></h2>
+
+        <div class="options-list" id="options-list"></div>
+
+        <div class="q-nav">
+          <button class="btn" id="btn-next" onclick="nextQuestion()" style="width:auto;padding:14px 36px;margin-top:24px;" disabled>
+            Continue
+          </button>
+        </div>
+      </div>
+
+      <!-- ══ SCREEN 3: RESULT ══ -->
+      <div class="screen" id="screen-result">
+        <div id="result-content"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    /* ─── DATA ─────────────────────────────────────────────── */
+
+    const QUESTIONS = [
+      {
+        text: "When you are in a relationship, you tend to feel:",
+        options: [
+          { letter: "A", text: "Like you have to prove your worth", map: "earned" },
+          { letter: "B", text: "Anxious about where you stand", map: "unpredictable" },
+          { letter: "C", text: "Responsible for the other person's emotions", map: "sacrifice" },
+          { letter: "D", text: "Guarded or closed off", map: "unsafe" },
+          { letter: "E", text: "Unsure of your own needs", map: "disappear" }
+        ]
+      },
+      {
+        text: "You are most drawn to people who:",
+        options: [
+          { letter: "A", text: "Need your love to open up", map: "earned" },
+          { letter: "B", text: "Are inconsistent or hard to read", map: "unpredictable" },
+          { letter: "C", text: "Need support or seem to be struggling", map: "sacrifice" },
+          { letter: "D", text: "Feel intense or unpredictable", map: "unsafe" },
+          { letter: "E", text: "Have strong personalities that you naturally adapt to", map: "disappear" }
+        ]
+      },
+      {
+        text: "When something feels off in a relationship, you:",
+        options: [
+          { letter: "A", text: "Try harder and give more", map: "earned" },
+          { letter: "B", text: "Overthink and look for hidden meaning", map: "unpredictable" },
+          { letter: "C", text: "Take responsibility, even when it is not yours", map: "sacrifice" },
+          { letter: "D", text: "Shut down or pull away", map: "unsafe" },
+          { letter: "E", text: "Adjust yourself to smooth things over", map: "disappear" }
+        ]
+      },
+      {
+        text: "Growing up, love felt:",
+        options: [
+          { letter: "A", text: "Conditional on who you were or how you behaved", map: "earned" },
+          { letter: "B", text: "Inconsistent — present sometimes, absent others", map: "unpredictable" },
+          { letter: "C", text: "Tied to how much you helped or took care of others", map: "sacrifice" },
+          { letter: "D", text: "Unsafe or overwhelming", map: "unsafe" },
+          { letter: "E", text: "Something you had to earn by fitting in", map: "disappear" }
+        ]
+      },
+      {
+        text: "Your biggest fear in relationships is:",
+        options: [
+          { letter: "A", text: "Not being enough", map: "earned" },
+          { letter: "B", text: "Being abandoned without warning", map: "unpredictable" },
+          { letter: "C", text: "Letting someone down when they need you", map: "sacrifice" },
+          { letter: "D", text: "Getting hurt by someone you trusted", map: "unsafe" },
+          { letter: "E", text: "Losing yourself entirely", map: "disappear" }
+        ]
+      },
+      {
+        text: "You often find yourself:",
+        options: [
+          { letter: "A", text: "Overgiving and wondering if it is ever enough", map: "earned" },
+          { letter: "B", text: "Seeking reassurance or chasing clarity", map: "unpredictable" },
+          { letter: "C", text: "Taking care of everyone around you", map: "sacrifice" },
+          { letter: "D", text: "Holding back parts of yourself", map: "unsafe" },
+          { letter: "E", text: "Adjusting who you are based on who you are with", map: "disappear" }
+        ]
+      },
+      {
+        text: "When someone shows up consistently and safely, you feel:",
+        options: [
+          { letter: "A", text: "Unsure if you actually deserve it", map: "earned" },
+          { letter: "B", text: "Bored or strangely disconnected", map: "unpredictable" },
+          { letter: "C", text: "Like you should do more to deserve it", map: "sacrifice" },
+          { letter: "D", text: "Uncomfortable or waiting for it to fall apart", map: "unsafe" },
+          { letter: "E", text: "Unsure how to simply be yourself with them", map: "disappear" }
+        ]
+      },
+      {
+        text: "In relationships, your role is usually:",
+        options: [
+          { letter: "A", text: "The giver — the one who holds it all together", map: "earned" },
+          { letter: "B", text: "The one trying to figure out where things stand", map: "unpredictable" },
+          { letter: "C", text: "The caretaker — always showing up for others", map: "sacrifice" },
+          { letter: "D", text: "The one keeping parts of yourself protected", map: "unsafe" },
+          { letter: "E", text: "The one who adapts to whoever is in front of you", map: "disappear" }
+        ]
+      }
+    ];
+
+    const RESULTS = {
+      earned: {
+        title: "Love Must Be Earned",
+        body: `
+          <p>You learned early on that love was something you had to work for.</p>
+          <p>It came through being easy, helpful, and not needing too much. You adapted by becoming the one who gives, the one who holds it together, the one who proves her worth through effort.</p>
+          <p>In your relationships, love feels like something you maintain. You give more than you receive. You stay longer than you should. You try harder when things feel off instead of walking away.</p>
+          <p>Not because you lack standards. Because your body learned that closeness comes after effort.</p>
+          <p>Even receiving can feel uncomfortable. Being chosen easily may feel unfamiliar. Part of you is still waiting for the moment where you have to prove yourself again.</p>
+          <p><strong>This is not who you are. This is what your nervous system learned.</strong></p>
+          <p>And until it is rewired, it will keep choosing relationships where love has to be earned.</p>
+        `
+      },
+      unpredictable: {
+        title: "Love Is Unpredictable",
+        body: `
+          <p>You learned that love could change without warning.</p>
+          <p>Sometimes it was there. Sometimes it was not. You never knew what version of someone you were going to get. So your body adapted by staying alert.</p>
+          <p>You learned to read the room, to anticipate shifts, to hold onto connection when it felt like it might slip away.</p>
+          <p>As an adult, you may feel drawn to relationships that feel intense and uncertain. When someone pulls away, you lean in. When they return, you feel relief. That cycle has become what love feels like.</p>
+          <p>Calm, consistent love can feel unfamiliar. It may even feel boring. Not because you want chaos — because your body learned that love lives inside the uncertainty.</p>
+          <p><strong>This is not who you are. This is what your nervous system learned.</strong></p>
+          <p>And until it is rewired, it will keep seeking what it recognizes.</p>
+        `
+      },
+      sacrifice: {
+        title: "Love Requires Self-Sacrifice",
+        body: `
+          <p>You learned that love meant taking care of others.</p>
+          <p>You were the one who showed up, who helped, who carried more than you should have. Your value came from what you could do for the people around you.</p>
+          <p>So now, you become the caretaker. You give your time, your energy, your emotional support. You hold space for others — often at the expense of yourself.</p>
+          <p>You may find yourself drawn to people who need help, who are overwhelmed, or who seem to rely on you to feel stable.</p>
+          <p>And when your needs go unmet, you do not always speak up. Because somewhere inside, you learned that your role was to give, not to receive.</p>
+          <p><strong>This is not who you are. This is what your nervous system learned.</strong></p>
+          <p>And until it is rewired, it will continue to give from an empty place.</p>
+        `
+      },
+      unsafe: {
+        title: "Love Is Unsafe",
+        body: `
+          <p>At some point, love and safety became disconnected for you.</p>
+          <p>There may have been experiences where closeness felt overwhelming, confusing, or even harmful. Your body learned that being seen or vulnerable was not fully safe.</p>
+          <p>So it adapted. You may feel guarded in relationships. You may struggle to fully open or trust. You may find yourself holding parts of yourself back, even when you want connection.</p>
+          <p>At times you may feel drawn to intensity, even when it does not feel stable. Because your nervous system is still trying to understand what love is supposed to feel like.</p>
+          <p><strong>You are not broken. Your body learned to protect you.</strong></p>
+          <p>And until your nervous system learns that safety and love can exist together, protection will keep showing up where connection wants to be.</p>
+        `
+      },
+      disappear: {
+        title: "Love Means I Disappear",
+        body: `
+          <p>You learned that love required you to adjust yourself.</p>
+          <p>To fit in. To meet expectations. To become who you needed to be in order to be accepted. Over time, you lost connection with your own needs, your own voice, your own sense of self.</p>
+          <p>In relationships, you prioritize the other person without even realizing it. You adapt. You accommodate. You shape yourself around them.</p>
+          <p>And at some point, you may look up and feel like you do not even know who you are anymore.</p>
+          <p>Not because you are weak. Because your body learned that belonging required self-abandonment.</p>
+          <p><strong>This is not who you are. This is what your nervous system learned.</strong></p>
+          <p>And until it is rewired, it will continue to trade your identity for connection.</p>
+        `
+      }
+    };
+
+    /* ─── STATE ────────────────────────────────────────────── */
+
+    let userName   = '';
+    let userEmail  = '';
+    let currentQ   = 0;
+    let scores     = { earned: 0, unpredictable: 0, sacrifice: 0, unsafe: 0, disappear: 0 };
+    let selected   = null; // index of selected option on current question
+
+    /* ─── GOOGLE SHEETS WEBHOOK ────────────────────────────── */
+    // Replace SHEET_WEBHOOK_URL with your Google Apps Script Web App URL
+    const SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzdbpCi3wrX_sIF1AhkFzbz3Ip_D3T9QXrQ86tQG1c4yZ4B6k4bgZlsW_B30o42Cjjl/exec';
+
+    async function sendToSheet(name, email, template) {
+      if (!SHEET_WEBHOOK_URL || SHEET_WEBHOOK_URL === 'https://script.google.com/macros/s/AKfycbzdbpCi3wrX_sIF1AhkFzbz3Ip_D3T9QXrQ86tQG1c4yZ4B6k4bgZlsW_B30o42Cjjl/exec') return;
+      try {
+        await fetch(SHEET_WEBHOOK_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, template, timestamp: new Date().toISOString() })
+        });
+      } catch (e) {
+        console.warn('Sheet sync failed:', e);
+      }
+    }
+
+    /* ─── SCREEN NAVIGATION ────────────────────────────────── */
+
+    function showScreen(id) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      const el = document.getElementById(id);
+      el.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ─── OPT-IN ───────────────────────────────────────────── */
+
+    function startAssessment() {
+      const nameEl  = document.getElementById('first-name');
+      const emailEl = document.getElementById('email');
+      const errName  = document.getElementById('err-name');
+      const errEmail = document.getElementById('err-email');
+      let valid = true;
+
+      if (!nameEl.value.trim()) {
+        errName.classList.add('visible'); valid = false;
+      } else { errName.classList.remove('visible'); }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailEl.value.trim())) {
+        errEmail.classList.add('visible'); valid = false;
+      } else { errEmail.classList.remove('visible'); }
+
+      if (!valid) return;
+
+      userName  = nameEl.value.trim();
+      userEmail = emailEl.value.trim();
+      currentQ  = 0;
+      scores    = { earned: 0, unpredictable: 0, sacrifice: 0, unsafe: 0, disappear: 0 };
+
+      renderQuestion();
+      showScreen('screen-questions');
+    }
+
+    /* ─── QUESTIONS ────────────────────────────────────────── */
+
+    function renderQuestion() {
+      const q = QUESTIONS[currentQ];
+      const total = QUESTIONS.length;
+
+      document.getElementById('q-count').textContent = `Question ${currentQ + 1} of ${total}`;
+      document.getElementById('progress-fill').style.width = `${(currentQ / total) * 100}%`;
+      document.getElementById('q-text').textContent = q.text;
+
+      const list = document.getElementById('options-list');
+      list.innerHTML = '';
+      selected = null;
+      document.getElementById('btn-next').disabled = true;
+
+      q.options.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.innerHTML = `<span class="option-letter">${opt.letter}</span>${opt.text}`;
+        btn.onclick = () => selectOption(i);
+        list.appendChild(btn);
+      });
+    }
+
+    function selectOption(index) {
+      document.querySelectorAll('.option-btn').forEach((b, i) => {
+        b.classList.toggle('selected', i === index);
+      });
+      selected = index;
+      document.getElementById('btn-next').disabled = false;
+    }
+
+    function nextQuestion() {
+      if (selected === null) return;
+      const map = QUESTIONS[currentQ].options[selected].map;
+      scores[map]++;
+      currentQ++;
+
+      if (currentQ < QUESTIONS.length) {
+        renderQuestion();
+      } else {
+        showResult();
+      }
+    }
+
+    /* ─── RESULT ───────────────────────────────────────────── */
+
+    function showResult() {
+      const winner = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
+      const result = RESULTS[winner];
+
+      sendToSheet(userName, userEmail, result.title);
+
+      const html = `
+        <span class="result-badge">Your Love Template</span>
+        <div class="result-title">${result.title}</div>
+        <div class="divider" style="margin:20px 0;"></div>
+        <div class="result-body">${result.body}</div>
+        <div class="next-step-box">
+          <span class="serif">Your Next Step</span>
+          <p>
+            A personalized Love Template Breakdown is on its way to <strong style="color:var(--gold)">${userEmail}</strong>.
+            <br />
+            If you are ready to understand the root of this pattern and what it would take to shift it, a Clarity Call is where that begins.
+          </p>
+          <a class="btn" href="https://brookedeanne.com/book" target="_blank" rel="noopener">
+            Book a Clarity Call with Brooke
+          </a>
+          <p class="email-note" style="margin-top:14px;">
+            The Clarity Call is free. One hour. Real answers. A path forward.
+          </p>
+        </div>
+      `;
+
+      document.getElementById('result-content').innerHTML = html;
+      document.getElementById('progress-fill').style.width = '100%';
+      showScreen('screen-result');
+    }
+  </script>
+</body>
+</html>
