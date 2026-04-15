@@ -649,19 +649,15 @@
     const SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwY6AXwv_9GVjCTANsmDaQP6ZFsxPRIJ7Agy2jX_kEeQ8tZrcSF4PWOozhLun52nHHh/exec';
 
     async function sendToSheet(name, email, template) {
-      if (!SHEET_WEBHOOK_URL || SHEET_WEBHOOK_URL === 'https://script.google.com/macros/s/AKfycbwY6AXwv_9GVjCTANsmDaQP6ZFsxPRIJ7Agy2jX_kEeQ8tZrcSF4PWOozhLun52nHHh/exec') return;
-      try {
-        await fetch(SHEET_WEBHOOK_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, email, template, timestamp: new Date().toISOString() })
-        });
-      } catch (e) {
-        console.warn('Sheet sync failed:', e);
-      }
-    }
-
+  const base = 'https://script.google.com/macros/s/AKfycbwY6AXwv_9GVjCTANsmDaQP6ZFsxPRIJ7Agy2jX_kEeQ8tZrcSF4PWOozhLun52nHHh/exec';
+  const url = base
+    + '?name=' + encodeURIComponent(name)
+    + '&email=' + encodeURIComponent(email)
+    + '&template=' + encodeURIComponent(template)
+    + '&timestamp=' + encodeURIComponent(new Date().toISOString());
+  const img = new Image();
+  img.src = url;
+}
     /* ─── SCREEN NAVIGATION ────────────────────────────────── */
 
     function showScreen(id) {
