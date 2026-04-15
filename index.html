@@ -646,10 +646,10 @@
 
     /* ─── GOOGLE SHEETS WEBHOOK ────────────────────────────── */
     // Replace SHEET_WEBHOOK_URL with your Google Apps Script Web App URL
-    const SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzWsC585LyqGuRYo2_v3SZnipBhVFLkDXkSjSQVIizTqJ0tr4DpF9vm-JQs-IBB3Zje/exec';
+    const SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxw31PGiVkbSPCkfY02Vc-8SvPl8iH6C7UTRKGUVAlS-i2KyMg6bdTH5yk3trFgpmK4/exec';
 
     async function sendToSheet(name, email, template) {
-  const base = 'https://script.google.com/macros/s/AKfycbzWsC585LyqGuRYo2_v3SZnipBhVFLkDXkSjSQVIizTqJ0tr4DpF9vm-JQs-IBB3Zje/exec';
+  const base = 'https://script.google.com/macros/s/AKfycbxw31PGiVkbSPCkfY02Vc-8SvPl8iH6C7UTRKGUVAlS-i2KyMg6bdTH5yk3trFgpmK4/exec';
   const url = base
     + '?name=' + encodeURIComponent(name)
     + '&email=' + encodeURIComponent(email)
