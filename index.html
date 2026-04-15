@@ -646,10 +646,10 @@
 
     /* ─── GOOGLE SHEETS WEBHOOK ────────────────────────────── */
     // Replace SHEET_WEBHOOK_URL with your Google Apps Script Web App URL
-    const SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzdbpCi3wrX_sIF1AhkFzbz3Ip_D3T9QXrQ86tQG1c4yZ4B6k4bgZlsW_B30o42Cjjl/exec';
+    const SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwY6AXwv_9GVjCTANsmDaQP6ZFsxPRIJ7Agy2jX_kEeQ8tZrcSF4PWOozhLun52nHHh/exec';
 
     async function sendToSheet(name, email, template) {
-      if (!SHEET_WEBHOOK_URL || SHEET_WEBHOOK_URL === 'https://script.google.com/macros/s/AKfycbzdbpCi3wrX_sIF1AhkFzbz3Ip_D3T9QXrQ86tQG1c4yZ4B6k4bgZlsW_B30o42Cjjl/exec') return;
+      if (!SHEET_WEBHOOK_URL || SHEET_WEBHOOK_URL === 'https://script.google.com/macros/s/AKfycbwY6AXwv_9GVjCTANsmDaQP6ZFsxPRIJ7Agy2jX_kEeQ8tZrcSF4PWOozhLun52nHHh/exec') return;
       try {
         await fetch(SHEET_WEBHOOK_URL, {
           method: 'POST',
