@@ -645,19 +645,17 @@
     let selected   = null; // index of selected option on current question
 
     /* ─── GOOGLE SHEETS WEBHOOK ────────────────────────────── */
-    // Replace SHEET_WEBHOOK_URL with your Google Apps Script Web App URL
-    const SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxw31PGiVkbSPCkfY02Vc-8SvPl8iH6C7UTRKGUVAlS-i2KyMg6bdTH5yk3trFgpmK4/exec';
+    function sendToSheet(name, email, template) {
+      const base = 'https://script.google.com/macros/s/AKfycbxw31PGiVkbSPCkfY02Vc-8SvPl8iH6C7UTRKGUVAlS-i2KyMg6bdTH5yk3trFgpmK4/exec';
+      const url = base
+        + '?name='      + encodeURIComponent(name)
+        + '&email='     + encodeURIComponent(email)
+        + '&template='  + encodeURIComponent(template)
+        + '&timestamp=' + encodeURIComponent(new Date().toISOString());
+      const img = new Image();
+      img.src = url;
+    }
 
-    async function sendToSheet(name, email, template) {
-  const base = 'https://script.google.com/macros/s/AKfycbxw31PGiVkbSPCkfY02Vc-8SvPl8iH6C7UTRKGUVAlS-i2KyMg6bdTH5yk3trFgpmK4/exec';
-  const url = base
-    + '?name=' + encodeURIComponent(name)
-    + '&email=' + encodeURIComponent(email)
-    + '&template=' + encodeURIComponent(template)
-    + '&timestamp=' + encodeURIComponent(new Date().toISOString());
-  const img = new Image();
-  img.src = url;
-}
     /* ─── SCREEN NAVIGATION ────────────────────────────────── */
 
     function showScreen(id) {
